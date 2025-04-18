@@ -575,9 +575,9 @@ def main():
         logger.error("FOGIS_USERNAME and FOGIS_PASSWORD must be set in configuration")
         return False
 
-    # Log username but mask password
+    # Log username only, never log password even if masked
     logger.info(f"Using FOGIS account: {username}")
-    logger.debug(f"Password provided: {mask_sensitive_data(password)}")
+    logger.debug("Password provided: [REDACTED]")
 
     # Create and run the detector
     detector = MatchListChangeDetector(username, password)
