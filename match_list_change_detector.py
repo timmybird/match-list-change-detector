@@ -565,7 +565,7 @@ def mask_sensitive_data(data: str) -> str:
     return "*" * 8  # Return fixed-length mask regardless of input length
 
 
-def main():
+def main() -> bool:
     """Run the match list change detection process."""
     # Check for required configuration
     username = config.get("FOGIS_USERNAME")
